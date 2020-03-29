@@ -1,0 +1,233 @@
+#!/bin/bash
+
+southEastInnerCity="
+  'Pembroke East A', 
+  'South Dock', 
+  'Mansion House A', 
+  'Royal Exchange A', 
+  'Royal Exchange B', 
+  'Wood Quay A', 
+  'Wood Quay B', 
+  'St. Kevin\'s', 
+  'Mansion House B', 
+  'Pembroke West A'"
+
+southWestInnerCity="
+  'Merchants Quay A', 
+  'Merchants Quay B', 
+  'Merchants Quay C', 
+  'Merchants Quay D', 
+  'Merchants Quay E', 
+  'Merchants Quay F', 
+  'Ushers A',
+  'Ushers B',
+  'Ushers C',
+  'Ushers D',
+  'Ushers E',
+  'Ushers F',
+  'Kilmainham B',
+  'Kilmainham C'"
+
+ballyfermotDrimnagh="
+  'Inchicore A',
+  'Kilmainham A',
+  'Decies',
+  'Chapelizod',
+  'Kylemore',
+  'Cherry Orchard C',
+  'Carna',
+  'Drumfinn',
+  'Cherry Orchard A',
+  'Crumlin A',
+  'Crumlin F',
+  'Crumlin E',
+  'Walkinstown A',
+  'Walkinstown B',
+  'Walkinstown C',
+  'Inchicore B'"
+
+kimmageRathmines="
+  'Kimmage A',
+  'Kimmage B',
+  'Kimmage C',
+  'Kimmage D',
+  'Kimmage E',
+  'Crumlin B',
+  'Crumlin C',
+  'Crumlin D',
+  'Rathmines West A',
+  'Rathmines West C',
+  'Rathmines West D',
+  'Rathmines West F',
+  'Rathmines West E',
+  'Terenure A',
+  'Terenure B',
+  'Terenure C',
+  'Terenure D',
+  'Rathfarnham'"
+
+pembroke="
+  'Rathmines West B',
+  'Rathmines East A',
+  'Rathmines East B',
+  'Rathmines East C',
+  'Rathmines East D',
+  'Pembroke West B',
+  'Pembroke West C',
+  'Pembroke East B',
+  'Pembroke East C',
+  'Pembroke East D',
+  'Pembroke East E'"
+
+cabraGlesnevin="
+  'Phoenix Park',
+  'Ashtown A',
+  'Ashtown B',
+  'Cabra West A',
+  'Cabra West B',
+  'Cabra West C',
+  'Cabra West D',
+  'Cabra East A',
+  'Cabra East B',
+  'Cabra East C',
+  'Arran Quay A',
+  'Botanic A'"
+
+clontarf="
+  'Drumcondra South A',
+  'Clontarf West A',
+  'Clontarf West B',
+  'Clontarf West C',
+  'Clontarf West D',
+  'Clontarf West E',
+  'Clontarf East A',
+  'Clontarf East B',
+  'Clontarf East C',
+  'Clontarf East D',
+  'Clontarf East E',
+  'Grace Park',
+  'Beaumont D',
+  'Beaumont E',
+  'Beaumont F',
+  'Harmonstown B'
+"
+
+ballymunFinglas="
+  'Finglas South A',
+  'Finglas South B',
+  'Finglas South C',
+  'Finglas South D',
+  'Finglas North A',
+  'Finglas North B',
+  'Finglas North C',
+  'Ballygall A',
+  'Ballygall B',
+  'Ballygall C',
+  'Ballygall D',
+  'Ballymun A',
+  'Ballymun B',
+  'Ballymun C',
+  'Ballymun D',
+  'Ballymun E',
+  'Ballymun F'
+"
+
+artaneWhitehall="
+  'Whitehall A',
+  'Whitehall B',
+  'Whitehall C',
+  'Whitehall D',
+  'Beaumont A',
+  'Beaumont B',
+  'Beaumont C',
+  'Harmonstown A',
+  'Kilmore A',
+  'Kilmore B',
+  'Kilmore C',
+  'Kilmore D',
+  'Priorswood A',
+  'Priorswood B',
+  'Priorswood C',
+  'Priorswood D',
+  'Priorswood E'
+"
+
+donaghmede="
+  'Raheny-St. Assam',
+  'Raheny-Foxfield',
+  'Raheny-Greendale',
+  'Grange A',
+  'Grange B',
+  'Grange C',
+  'Grange D',
+  'Grange E',
+  'Ayrfield',
+  'Edenmore'
+"
+
+ogr2ogr \
+  -f GeoJSON \
+  -where "COUNTYNAME IN ('Dublin City')" \
+  dublin-city.json \
+  ireland.geojson
+
+ogr2ogr \
+  -f GeoJSON \
+  -where "EDNAME IN ($southEastInnerCity)" \
+  output/south-east-inner-city.json \
+  dublin-city.json
+
+ogr2ogr \
+  -f GeoJSON \
+  -where "EDNAME IN ($southWestInnerCity)" \
+  output/south-west-inner-city.json \
+  dublin-city.json
+
+ogr2ogr \
+  -f GeoJSON \
+  -where "EDNAME IN ($ballyfermotDrimnagh)" \
+  output/ballyfermot-drimnagh.json \
+  dublin-city.json
+
+ogr2ogr \
+  -f GeoJSON \
+  -where "EDNAME IN ($kimmageRathmines)" \
+  output/kimmage-rathmines.json \
+  dublin-city.json
+
+ogr2ogr \
+  -f GeoJSON \
+  -where "EDNAME IN ($pembroke)" \
+  output/pembroke.json \
+  dublin-city.json
+
+ogr2ogr \
+  -f GeoJSON \
+  -where "EDNAME IN ($cabraGlesnevin)" \
+  output/cabra-glesnevin.json \
+  dublin-city.json
+
+ogr2ogr \
+  -f GeoJSON \
+  -where "EDNAME IN ($clontarf)" \
+  output/clontarf.json \
+  dublin-city.json
+
+ogr2ogr \
+  -f GeoJSON \
+  -where "EDNAME IN ($ballymunFinglas)" \
+  output/ballymun-finglas.json \
+  dublin-city.json
+  
+ogr2ogr \
+  -f GeoJSON \
+  -where "EDNAME IN ($artaneWhitehall)" \
+  output/artane-whitehall.json \
+  dublin-city.json
+  
+ogr2ogr \
+  -f GeoJSON \
+  -where "EDNAME IN ($donaghmede)" \
+  output/donaghmede.json \
+  dublin-city.json
+  

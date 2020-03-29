@@ -1,0 +1,25 @@
+.electoral-area{
+    fill: rgb(71, 70, 70);
+    stroke: grey;
+    stroke-width: 1px;
+    z-index: 100;
+}
+.electoral-area:hover{
+    fill: red;
+    z-index: 100;
+}
+
+.state {
+    fill: #ccc;
+}
+
+.selected {
+    fill: none;
+    stroke: green;
+    stroke-width: 2px;
+    z-index: -1;
+}
+
+.selected:hover {
+    z-index: -1;
+}
