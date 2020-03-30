@@ -1,4 +1,3 @@
-const topojson =require("topojson-server");
 var geojsonMerge = require('@mapbox/geojson-merge');
 const path = require('path');
 const fs = require('fs');
