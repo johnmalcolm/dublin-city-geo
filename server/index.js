@@ -32,9 +32,8 @@ fs.readdir(directoryPath, function (err, files) {
     });
     
     var dublinCity = geojsonMerge.merge(councilArray);
-    // var dublinCityTopo = topojson.topology(dublinCity.features);
 
-    fs.writeFile("dublin-city-new.json", JSON.stringify(dublinCity), 'utf8', function (err) {
+    fs.writeFile("dublin-city-lea.json", JSON.stringify(dublinCity), 'utf8', function (err) {
         if (err) {
             console.log("An error occured while writing JSON Object to File.");
             return console.log(err);

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(e) {
     console.log("Council Mapper");
 
-    d3.json("server/output/artane-whitehall.json", function(error, electoral) {
+    d3.json("server/dublin-city-lea.json", function(error, electoral) {
         if (error) return console.error("Error: " + error)
         
         // Passed error handling
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
             .data(electoral.features)
             .enter().append("path")
               .attr("class", function(d) { return "electoral-area "
-                    + d.properties.COUNCIL + 
+                    + d.properties.LEA + 
                     " " + d.properties.EDNAME.replace(/\W+/g, '-').toLowerCase() })
               .attr("d", path);
 
