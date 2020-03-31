@@ -91,7 +91,13 @@ cabraGlesnevin="
   'Cabra East B',
   'Cabra East C',
   'Arran Quay A',
-  'Botanic A'"
+  'Botanic A',
+  'Botanic B',
+  'Botanic C',
+  'Inns Quay A',
+  'Inns Quay B',
+  'Drumcondra South C'
+  "
 
 clontarf="
   'Drumcondra South A',
@@ -165,6 +171,25 @@ donaghmede="
   'Edenmore'
 "
 
+northInnerCity="
+  'North Dock B',
+  'North Dock C',
+  'North City',
+  'Mountjoy A',
+  'Mountjoy B',
+  'Inns Quay C',
+  'Arran Quay B',
+  'Arran Quay C',
+  'Arran Quay D',
+  'Arran Quay E',
+  'Rotunda A',
+  'Rotunda B',
+  'Drumcondra South B',
+  'Ballybough A',
+  'Ballybough B',
+  'North Dock A'
+"
+
 ogr2ogr \
   -f GeoJSON \
   -where "COUNTYNAME IN ('Dublin City')" \
@@ -229,5 +254,11 @@ ogr2ogr \
   -f GeoJSON \
   -where "EDNAME IN ($donaghmede)" \
   output/donaghmede.json \
+  dublin-city.json
+
+ogr2ogr \
+  -f GeoJSON \
+  -where "EDNAME IN ($northInnerCity)" \
+  output/north-inner-city.json \
   dublin-city.json
   
