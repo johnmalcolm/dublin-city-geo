@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     // 5. Show sub LEA on zoom, and remove when zoomed out.
     // 6. Add hover affects showing LEA info.
     // 7. Add toggle various cloropleths. 
+const tile = d3.tile();
 
     d3.json("server/dublin-city-lea.json", function(error, electoral) {
         if (error) return console.error("Error: " + error)

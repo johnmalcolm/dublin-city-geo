@@ -1,0 +1,23 @@
+{
+  "name": "dublin-city-council",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnmalcolm/dublin-city-geo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnmalcolm/dublin-city-geo/issues"
+  },
+  "homepage": "https://github.com/johnmalcolm/dublin-city-geo#readme",
+  "dependencies": {
+    "http-server": "^0.12.3",
+    "nodemon": "^2.0.4"
+  }
+}
